@@ -417,7 +417,7 @@ def moveRel(xOffset=None, yOffset=None, duration=None, tween=None, logScreenshot
         # https://stackoverflow.com/questions/50601200/pyhon-directinput-mouse-relative-moving-act-not-as-expected
         extra = ctypes.c_ulong(0)
         ii_ = Input_I()
-        ii_.mi = MouseInput(xOffset, yOffset, 0, MOUSEEVENTF_MOVE, 0, ctypes.pointer(extra))
+        ii_.mi = MouseInput(xOffset, yOffset, 0, MOUSEEVENTF_MOVE, 0, None)
         command = Input(ctypes.c_ulong(0), ii_)
         SendInput(1, ctypes.pointer(command), ctypes.sizeof(command))
 
