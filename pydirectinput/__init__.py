@@ -345,7 +345,7 @@ def click(x=None, y=None, clicks=1, interval=0.0, button=PRIMARY, duration=None,
 
         extra = ctypes.c_ulong(0)
         ii_ = Input_I()
-        ii_.mi = MouseInput(0, 0, 0, ev, 0, ctypes.pointer(extra))
+        ii_.mi = MouseInput(0, 0, 0, ev, 0, None)
         x = Input(ctypes.c_ulong(0), ii_)
         SendInput(1, ctypes.pointer(x), ctypes.sizeof(x))
 
